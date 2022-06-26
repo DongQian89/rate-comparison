@@ -59,14 +59,26 @@ def compare_4lpr(mystr,year,month,day):
     
     return monthly_rate > lpr_1y/3
 
+
+def lpr_compare(mystr,year,month,day):
+    try:
+        return compare_4lpr(mystr,year,month,day)
+    except:
+        return None
+
+
+def zw2num(mystr):
+    try:
+        return cn2num(mystr)
+    except:
+        return None
+
+
 if __name__ == "__main__":
-    f=open('4倍LPR利率比较问题/test.txt')
-    for line in f:
+    # f=open('4倍LPR利率比较问题/test.txt')
+    # for line in f:
         # print(line.strip())
-        mystr = line.strip()
-        try:
-            compare_4lpr(mystr,2022,2,21)
-        except:
-            print("error....:",mystr)
-        print("*************")
+        # mystr = line.strip()
+        # print(lpr_compare(mystr,2022,2,21))
+    print(zw2num("约两千元"))
         
